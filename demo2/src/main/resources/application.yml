@@ -1,3 +1,5 @@
+server:
+  port: 80
 spring:
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
@@ -10,4 +12,19 @@ spring:
     jpa:
         hibernate:
             ddl-auto: update
-        show-sql: 'true  '
+        show-sql: true
+
+
+    redis:
+       database: 0
+       host: 192.168.22.45
+       port: 8099
+       password: xiaoxiaoqaz
+       timeout: 0
+       pool:
+           max-active: 8
+           max-wait: -1
+           max-idle: 8
+           min-idle: 0
+    session:
+      store-type: none
