@@ -7,14 +7,20 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import javax.transaction.Transactional;
 import java.util.HashMap;
 import java.util.Map;
 
 @RestController
 @SpringBootApplication
-public class DemoApplication extends SpringBootServletInitializer {
+public class DemoApplication extends SpringBootServletInitializer implements EmbeddedServletContainerCustomizer {
+
+
+	@Override
+	public void customize(ConfigurableEmbeddedServletContainer configurableEmbeddedServletContainer) {
+
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
